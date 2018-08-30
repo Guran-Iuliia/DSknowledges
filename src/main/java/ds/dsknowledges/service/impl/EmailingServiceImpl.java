@@ -16,6 +16,7 @@ public class EmailingServiceImpl implements EmailingService {
     @Override
     public Emailing save(Emailing emailing) {
         Assert.notNull(emailing, "emailing is null");
+
         return emailingRepository.save(emailing);
     }
 
