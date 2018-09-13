@@ -4,5 +4,10 @@ import javax.mail.internet.MimeMessage;
 
 public interface EmailService {
 
-    void sendMessage(MimeMessage mimeMessage);
+    /**
+     * Method send message.
+     *
+     * @param message contains text, subject, recipient or recipients and link to resource on classpath.
+     */
+    void sendMessage(MimeMessage message);
 }

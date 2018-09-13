@@ -37,6 +37,9 @@ public class ArticleServiceImpl implements ArticleService {
         return new ArticleResponseDTO(list, count);
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public Article save(Article article) {
         Assert.notNull(article, "article is null");
@@ -44,6 +47,9 @@ public class ArticleServiceImpl implements ArticleService {
         return articleRepository.save(article);
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public void delete(Long id) {
         Assert.notNull(id, "id is null");
@@ -51,6 +57,9 @@ public class ArticleServiceImpl implements ArticleService {
         commentRepository.deleteByArticleId(id);
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public ArticleDTO findById(Long id) {
         Article article = articleRepository.findOne(1L);

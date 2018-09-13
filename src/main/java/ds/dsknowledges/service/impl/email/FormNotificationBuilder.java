@@ -9,16 +9,22 @@ import org.springframework.stereotype.Service;
 @PropertySource("classpath:email.properties")
 public class FormNotificationBuilder extends EmailBuilderImpl<ContactDTO> {
 
-    @Value("${mail.email}")
+    @Value("${mail.admin}")
     private String recipient;
 
     private static final String SUBJECT = "New contact";
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     String getMessageSubject() {
         return SUBJECT;
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     String getMessageBody(ContactDTO contactDTO) {
         return "Dear admin you have new contact "
@@ -27,6 +33,9 @@ public class FormNotificationBuilder extends EmailBuilderImpl<ContactDTO> {
                 + contactDTO.getEmail();
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     String getMessageRecipients() {
         return recipient;

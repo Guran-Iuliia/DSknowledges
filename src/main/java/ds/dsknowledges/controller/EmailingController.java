@@ -14,15 +14,15 @@ public class EmailingController {
     @Autowired
     private EmailingService emailingService;
 
+    /**
+     * Send message to admin for subscriber.
+     *
+     * @param emailing is object that contains user's email.
+     * @return http status OK.
+     */
     @PostMapping
-    public ResponseEntity<Emailing> save(@RequestBody Emailing emailing) {
-        Emailing savedEmailing = emailingService.save(emailing);
-        return new ResponseEntity<>(savedEmailing, HttpStatus.OK);
-    }
-
-    @GetMapping("/delete/{id}")
-    public ResponseEntity<Emailing> delete(@PathVariable("id") Long id) {
-        emailingService.delete(id);
+    public ResponseEntity save(@RequestBody Emailing emailing) {
+        emailingService.save(emailing);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

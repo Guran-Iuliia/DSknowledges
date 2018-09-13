@@ -20,6 +20,9 @@ public class EmailServiceImpl implements EmailService {
     @Autowired
     private final JavaMailSender javaMailSender;
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public void sendMessage(MimeMessage mimeMessage) {
         if (mimeMessage == null) {

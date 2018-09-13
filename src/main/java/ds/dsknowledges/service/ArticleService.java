@@ -14,9 +14,26 @@ public interface ArticleService  {
      */
     ArticleResponseDTO findAll(int page);
 
+    /**
+     * Creates new article.
+     *
+     * @param article is entity.
+     * @return {@link Article} entity.
+     */
     Article save(Article article);
 
-    void delete(Long id);
-
+    /**
+     * Returns article by the given id.
+     *
+     * @param id is articles's identifier.
+     * @return {@link ArticleDTO} object.
+     */
     ArticleDTO findById(Long id);
+
+    /**
+     * Deletes article by the given id.
+     *
+     * @param id is article identifier.
+     */
+    void delete(Long id);
 }

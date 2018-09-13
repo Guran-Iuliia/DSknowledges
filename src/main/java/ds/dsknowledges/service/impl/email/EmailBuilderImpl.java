@@ -18,6 +18,9 @@ public abstract class EmailBuilderImpl<T> implements EmailBuilder<T> {
     @Autowired
     private JavaMailSender javaMailSender;
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public MimeMessage buildMessage(T entity) {
         final MimeMessage message = javaMailSender.createMimeMessage();
@@ -32,10 +35,19 @@ public abstract class EmailBuilderImpl<T> implements EmailBuilder<T> {
             return null;
         }    }
 
+    /**
+     * @return message subject.
+     */
     abstract String getMessageSubject();
 
+    /**
+     * @return message body.
+     */
     abstract String getMessageBody(T entity);
 
+    /**
+     * @return recipient.
+     */
     abstract String getMessageRecipients();
 
 }

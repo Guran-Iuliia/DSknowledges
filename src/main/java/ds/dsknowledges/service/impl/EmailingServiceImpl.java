@@ -13,16 +13,12 @@ public class EmailingServiceImpl implements EmailingService {
     @Autowired
     private EmailingRepository emailingRepository;
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
-    public Emailing save(Emailing emailing) {
+    public void save(Emailing emailing) {
         Assert.notNull(emailing, "emailing is null");
-
-        return emailingRepository.save(emailing);
-    }
-
-    @Override
-    public void delete(Long id) {
-        Assert.notNull(id, "id is null");
-        emailingRepository.delete(id);
+        emailingRepository.save(emailing);
     }
 }

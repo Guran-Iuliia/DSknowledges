@@ -13,12 +13,18 @@ public class CommentServiceImpl implements CommentService {
     @Autowired
     private CommentRepository commentRepository;
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public Comment save(Comment comment) {
         Assert.notNull(comment, "comment is null");
         return commentRepository.save(comment);
     }
 
+    /**
+     * {@inheritDoc}.
+     */
     @Override
     public void delete(Long id) {
         Assert.notNull(id, "id is null");
